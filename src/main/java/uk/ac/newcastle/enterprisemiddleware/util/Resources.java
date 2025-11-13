@@ -28,12 +28,5 @@ public class Resources {
     public Logger produceLog(InjectionPoint injectionPoint) {
         return Logger.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
     }
-//
-//    @Produces
-//    @Named("mapper")
-//    public ObjectMapper produceMapper() {
-//        return new ObjectMapper();
-//    }
-
 }
 

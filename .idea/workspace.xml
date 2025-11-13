@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33529d1f-da04-4206-8b9d-2be9db5e8ef1" name="Changes" comment="" />
+    <list default="true" id="33529d1f-da04-4206-8b9d-2be9db5e8ef1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/newcastle/enterprisemiddleware/util/Resources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/newcastle/enterprisemiddleware/util/Resources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -37,9 +43,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.ContactRestServiceIntegrationTest.executor": "Run",
+    "JUnit.CustomerRestServiceIntegrationTest.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Quarkus.csc8104.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
@@ -51,11 +61,42 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "inlay.hints",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ContactRestServiceIntegrationTest">
+    <configuration name="ContactRestServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csc8104" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.newcastle.enterprisemiddleware.contact.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uk.ac.newcastle.enterprisemiddleware.contact" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.newcastle.enterprisemiddleware.contact.ContactRestServiceIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerRestServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csc8104" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.newcastle.enterprisemiddleware.customer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uk.ac.newcastle.enterprisemiddleware.customer" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.newcastle.enterprisemiddleware.customer.CustomerRestServiceIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="csc8104" type="QuarkusRunConfigurationType" factoryName="Quarkus" nameIsGenerated="true">
       <module name="csc8104" />
       <QsMavenRunConfiguration>
@@ -94,6 +135,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ContactRestServiceIntegrationTest" />
+        <item itemvalue="JUnit.CustomerRestServiceIntegrationTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -111,7 +158,10 @@
       <option name="presentableId" value="Default" />
       <updated>1762958835095</updated>
       <workItem from="1762958836831" duration="973000" />
-      <workItem from="1762959841094" duration="3231000" />
+      <workItem from="1762959841094" duration="13974000" />
+      <workItem from="1763034716776" duration="6906000" />
+      <workItem from="1763045519263" duration="6435000" />
+      <workItem from="1763062880181" duration="9976000" />
     </task>
     <servers />
   </component>
