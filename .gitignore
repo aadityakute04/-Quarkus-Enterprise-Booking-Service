@@ -1,39 +1,23 @@
-#Maven
+# Maven / build
 target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-release.properties
+!.mvn/wrapper/maven-wrapper.jar
 
-# Eclipse
-.project
-.classpath
-.settings/
-bin/
+# Quarkus
+.quarkus/
+quarkus-app/
 
-# IntelliJ
-.idea
-*.ipr
+# IDEs
+.idea/
 *.iml
-*.iws
+.vscode/
 
-# NetBeans
-nb-configuration.xml
-
-# Visual Studio Code
-.vscode
-.factorypath
-
-# OSX
+# OS files
 .DS_Store
+Thumbs.db
 
-# Vim
-*.swp
-*.swo
+# logs and temp
+*.log
+*.tmp
 
-# patch
-*.orig
-*.rej
-
-# Local environment
-.env
+# Docker
+docker-compose.override.yml
