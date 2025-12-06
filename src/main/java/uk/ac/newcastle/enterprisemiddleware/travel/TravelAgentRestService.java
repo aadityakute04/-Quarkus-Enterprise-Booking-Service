@@ -48,11 +48,10 @@ public class TravelAgentRestService {
         TravelAgentBooking tab = repo.findById(id);
         if (tab == null) return Response.status(Response.Status.NOT_FOUND).build();
 
-        // cancel remote bookings if present (best-effort)
+        // cancel remote bookings if present
         try {
             if (tab.getFlightBookingId() != null) {
                 // cancel remote flight
-                // if you want to re-use service layer or inject clients here, do so
             }
             if (tab.getTaxiBookingId() != null) {
                 // cancel taxi

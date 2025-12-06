@@ -8,5 +8,4 @@ public class RemoteBooking {
     public Long id;
     public String bookingReference;
 
-    // add getters/setters if you prefer; public fields work with Jackson by default
 }

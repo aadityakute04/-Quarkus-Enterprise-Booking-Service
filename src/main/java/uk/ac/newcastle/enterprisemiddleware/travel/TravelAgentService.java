@@ -51,7 +51,6 @@ public class TravelAgentService {
         Long flightRemoteId = null;
 
         try {
-            // 1) create hotel booking
             HotelClient.RemoteBookingRequest hReq = new HotelClient.RemoteBookingRequest();
             hReq.customerId = req.customerId;
             hReq.hotelId = req.hotelId;
@@ -65,7 +64,6 @@ public class TravelAgentService {
             tab.setHotelBookingId(hotelRemoteId);
             repo.update(tab);
 
-            // 2) create taxi booking
             TaxiClient.RemoteBookingRequest tReq = new TaxiClient.RemoteBookingRequest();
             tReq.customerId = req.customerId;
             tReq.taxiId = req.taxiId;
@@ -79,7 +77,6 @@ public class TravelAgentService {
             tab.setTaxiBookingId(taxiRemoteId);
             repo.update(tab);
 
-            // 3) create flight booking
             FlightClient.RemoteBookingRequest fReq = new FlightClient.RemoteBookingRequest();
             fReq.customerId = req.customerId;
             fReq.flightId = req.flightId;
@@ -92,7 +89,6 @@ public class TravelAgentService {
             flightRemoteId = (fBooking != null) ? fBooking.id : null;
             tab.setFlightBookingId(flightRemoteId);
 
-            // all succeeded
             tab.setStatus("CONFIRMED");
             repo.update(tab);
             return tab;
@@ -100,7 +96,6 @@ public class TravelAgentService {
         } catch (Exception e) {
             LOG.error("Aggregate booking failed: " + e.getMessage(), e);
 
-            // Compensation (reverse order) — best-effort cancellations
             try {
                 if (flightRemoteId != null) {
                     flightClient.cancelBooking(flightRemoteId);
@@ -126,7 +121,6 @@ public class TravelAgentService {
             tab.setStatus("FAILED");
             repo.update(tab);
 
-            // propagate as runtime exception so REST layer returns 500 (or modify as needed)
             throw new RuntimeException("Aggregate booking failed and compensation attempted: " + e.getMessage(), e);
         }
     }

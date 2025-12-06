@@ -43,14 +43,12 @@ public class Customer implements Serializable {
     private String address;
 
     // Bidirectional relationship to Booking.
-    // Cascade ALL + orphanRemoval ensures bookings are deleted when customer deleted.
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<uk.ac.newcastle.enterprisemiddleware.booking.Booking> bookings = new ArrayList<>();
 
     public Customer() {}
 
-    // getters & setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

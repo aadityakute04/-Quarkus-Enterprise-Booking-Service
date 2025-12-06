@@ -30,7 +30,7 @@ public class BookingService {
     public Booking create(Booking booking) throws UniqueBookingReferenceException {
         validator.validateBooking(booking);
 
-        // check unique bookingReference explicitly and throw typed exception
+        // check unique bookingReference
         if (booking.getBookingReference() != null && repository.findByReference(booking.getBookingReference()).isPresent()) {
             throw new UniqueBookingReferenceException("Booking reference already exists: " + booking.getBookingReference());
         }

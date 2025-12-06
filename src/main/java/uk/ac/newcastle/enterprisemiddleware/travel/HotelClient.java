@@ -4,10 +4,7 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
-/**
- * Minimal remote client interface for the hotel service.
- * Adjust paths/fields to match your colleagues' Swagger if needed.
- */
+
 @Path("/hotels")
 @RegisterRestClient(configKey = "hotel-api")
 public interface HotelClient {
@@ -22,7 +19,6 @@ public interface HotelClient {
     @Path("/bookings/{id}")
     void cancelBooking(@PathParam("id") Long id);
 
-    // nested request DTO (public so other classes can reference HotelClient.RemoteBookingRequest)
     class RemoteBookingRequest {
         public Long customerId;
         public Long hotelId;

@@ -41,14 +41,12 @@ public class Hotel implements Serializable {
     @Size(max = 30)
     private String phoneNumber;
 
-    // Bidirectional relationship to Booking: cascade so deleting hotel removes bookings.
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<uk.ac.newcastle.enterprisemiddleware.booking.Booking> bookings = new ArrayList<>();
 
     public Hotel() {}
 
-    // getters & setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

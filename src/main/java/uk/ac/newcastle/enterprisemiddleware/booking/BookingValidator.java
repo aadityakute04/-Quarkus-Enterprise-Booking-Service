@@ -29,12 +29,7 @@ public class BookingValidator {
     @Inject
     HotelRepository hotelRepository;
 
-    /**
-     * Validate booking bean with bean validation and domain rules:
-     * - startDate not after endDate
-     * - unique bookingReference
-     * - referenced customer and hotel exist
-     */
+
     public void validateBooking(Booking booking) {
         if (booking == null) {
             throw new IllegalArgumentException("Booking was null.");

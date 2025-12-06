@@ -21,7 +21,6 @@ public class GuestBookingRestService {
     @Inject
     BookingService bookingService;
 
-    // Inject UserTransaction via CDI (Quarkus + Narayana provide this)
     @Inject
     UserTransaction userTransaction;
 
@@ -32,26 +31,21 @@ public class GuestBookingRestService {
         }
 
         try {
-            // begin manual JTA transaction
             userTransaction.begin();
 
-            // create customer first (validation happens inside service)
             Customer createdCustomer = customerService.create(guestBooking.getCustomer());
 
-            // attach created customer to booking and persist booking
             Booking bookingToCreate = guestBooking.getBooking();
             bookingToCreate.setCustomer(createdCustomer);
 
             Booking createdBooking = bookingService.create(bookingToCreate);
 
-            // commit transaction
             userTransaction.commit();
 
             URI uri = uriInfo.getAbsolutePathBuilder().path(String.valueOf(createdBooking.getId())).build();
             return Response.created(uri).entity(createdBooking).build();
 
         } catch (UniqueBookingReferenceException e) {
-            // domain conflict -> rollback
             safeRollback();
             return Response.status(Response.Status.CONFLICT).entity(e.getMessage()).build();
         } catch (ConstraintViolationException | IllegalArgumentException e) {
@@ -63,14 +57,12 @@ public class GuestBookingRestService {
         }
     }
 
-    // helper to rollback without throwing on rollback failure
     private void safeRollback() {
         try {
             if (userTransaction != null) {
                 userTransaction.rollback();
             }
         } catch (Exception ex) {
-            // log if you have a logger; ignore here to avoid masking original exception
         }
     }
 }

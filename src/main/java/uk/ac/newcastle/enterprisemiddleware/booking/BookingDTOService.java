@@ -18,9 +18,9 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import java.net.URI;
 import java.util.Optional;
 
-/**
- * Create bookings using BookingDTO (customerId + hotelId).
- */
+
+// Create bookings using BookingDTO (customerId + hotelId).
+
 @Path("/bookingdto")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)

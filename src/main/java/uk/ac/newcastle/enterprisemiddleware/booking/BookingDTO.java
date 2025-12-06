@@ -16,7 +16,7 @@ public class BookingDTO {
     private String status;
     private Double totalPrice;
 
-    // ----- Getters and Setters -----
+
     public Long getCustomerId() {
         return customerId;
     }
